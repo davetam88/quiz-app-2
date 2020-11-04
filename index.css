@@ -1,0 +1,137 @@
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: sienna;
+    margin: 0;
+    /*
+background: cover;
+background-image: url("../images/wallpaper.jpg");
+*/
+    background-color: sandybrown;
+}
+
+header {
+    padding: 55px 0 0 0;
+    /* color: white; */
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+}
+
+.question-and-score {
+    font-size: 20px;
+    font-weight: 600px;
+    color: white;
+    text-align: center;
+    list-style: none;
+}
+
+button {
+    margin-top: 10px;
+    height: auto;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+    background: orange;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+/* 
+.shopping-item {
+    display: block;
+    color: grey;
+    font-style: italic;
+    font-size: 20px;
+    margin-bottom: 15px;
+} */
+
+.start-screen, fieldset {
+    width: 80%;
+    padding: 40px;
+    margin: 55px auto 0 auto;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+legend {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.question-form .question {
+    margin-bottom: 20px;
+    padding: 0 2%;
+    font-size: 20px;
+    font-weight: 600px;
+}
+
+.options ul {
+    list-style: none;
+    margin: 0;
+    text-align: left;
+}
+
+label {
+    font-size: 18px;
+}
+
+.options span {
+    display: block;
+    border-radius: 5px;
+}
+
+.right-answer {
+    background: ivory;
+    padding: 10px 20px;
+    margin: 5px 20px;
+    border: 2px solid greenyellow;
+}
+
+.wrong-answer {
+    background: ivory;
+    padding: 10px;
+    margin: 5px 20px;
+    border: 2px solid #fe0000;
+}
+
+.question-form button {
+    float: right;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+#next-question-btn {
+    display: none;
+}
