@@ -287,17 +287,7 @@ function handleRestartButtonClick() {
   });
 }
 
-/***
- * FUNC:: handleRestartButtonClick
- */
-function handleKeyPress() {
-// new..
-	console.log("in  handleKeyPress");
-//         <input type="radio" name="option" id="option1" value="That one" required>
-	// handle space keypress input type as above, it would be inside the question page.
-	// highlight the button.
-	// and move on to check the status.
-}
+
 
 // callback function
 /***
