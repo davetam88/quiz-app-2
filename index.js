@@ -8,7 +8,7 @@ const STORE = {
         'George Washington crossing the Delaware',
         'Jimmy Carter visiting Egypt for the Middle East treaty'
       ],
-      correctAnswer:         'Abraham Lincoln when he is wearing the hat'
+      correctAnswer: 'Abraham Lincoln when he is wearing the hat'
     },
     {
       question: 'This week, coronavirus cases surged again in many parts of the country, pushing the total since March to over 8.8 million. In response, the president said the United States is',
@@ -18,31 +18,30 @@ const STORE = {
         'Rounding the turn',
         'Not in as bad shape as the people in that Brad Pitt movie about the Zombie virus'
       ],
-      correctAnswer:         'Rounding the turn'
+      correctAnswer: 'Rounding the turn'
     },
     {
-      question: 'At a recent rally, Trump bragged about his administratio is work on hypersonic missiles, but he called them "hydrosonic" which is the name of a',
+      question: 'At a recent rally, Trump bragged about his administration is work on hypersonic missiles, but he called them "hydrosonic" which is the name of a',
       answers: [
         'Conventional seaplane.',
         'Weapon used in Star Trek.',
         'Toothbrush.',
-        'A type of War plane used in Star War'
+        'A type of War plane used in &#34Star War&#34'
 
       ],
-      correctAnswer:         'Toothbrush.'
+      correctAnswer: 'Toothbrush.'
     },
     {
-      question: 'At their last debate, Trump claimed Joe Biden¡¯s plan to reduce carbon emissions would mean the end of',
+      question: 'At their last debate, Trump claimed Joe Biden&#39s plan to reduce carbon emissions would mean the end of',
       answers: [
         'Windows',
         'Top-quality golf courses.',
         'Traditional all-American smog.',
-        'Gss engines.'
+        'Gas engines.'
 
       ],
-      correctAnswer:         'Windows'
+      correctAnswer: 'Windows'
     },
-
     {
       question:
         'Asked why Black Americans were "still dying at the hands of law enforcement in this country" Trump said ',
@@ -50,15 +49,16 @@ const STORE = {
         'Beats me.',
         'So are white people.',
         'Can I make this about suburbs?',
-        'Story make up by the democrats'
+        'Story made up by the democrats'
       ],
-      correctAnswer:         'Can I make this about suburbs?'
+      correctAnswer: 'Can I make this about suburbs?'
     }
   ],
   quizStarted: false,
   currentQuestionNum: 0,
   score: 0
 };
+
 // var..
 
 
@@ -100,13 +100,14 @@ function generateScoreHtml() {
  * FUNC:: generateAnswersHtml
  */
 function generateAnswersHtml() {
-const answersArray = STORE.questions[STORE.currentQuestionNum].answers;
+  const answersArray = STORE.questions[STORE.currentQuestionNum].answers;
   let answersHtml = '';
   let idx = 0;
   answersArray.forEach(answer => {
+
     answersHtml += `
-      <div tabindex ="${idx + 1}" id="option-container-${idx}">
-        <input type="radio" name="options" id="option${idx + 1}" value= "${answer}"  required> 
+      <div  id="option-container-${idx}">
+        <input type="radio" tabindex ="${idx + 1}" name="options" id="option${idx + 1}" value= "${answer}"  required> 
         <label for="option${idx + 1}"> ${answer}</label>
       </div>
     `;
@@ -144,12 +145,14 @@ function generateQuestionHtml() {
 function generateFeedbackHTML(answerStatus) {
   let correctAnswer = STORE.questions[STORE.currentQuestionNum].correctAnswer;
   let html = '';
-  if (answerStatus === 'correct') {
+  if (answerStatus === 'correct')
+  {
     html = `
     <div class="right-answer">That is correct!</div>
     `;
   }
-  else if (answerStatus === 'incorrect') {
+  else if (answerStatus === 'incorrect')
+  {
     html = `
       <div class="wrong-answer">That is incorrect. The correct answer is ${correctAnswer}.</div>
     `;
@@ -187,8 +190,7 @@ function generateResultsScreen() {
 * FUNC:: renderQuizApp
 */
 function renderQuizApp() {
-	console.log("in  renderQuizApp");
-	
+
   // rendering the quiz app in the DOM.
   // do startup page.
   currentQuestionNum = STORE.currentQuestionNum;
@@ -225,7 +227,7 @@ function handleStartClick() {
  */
 function handleNextQuestionClick() {
   $('body').on('click', '#next-question-btn', (event) => {
-		  renderQuizApp();
+    renderQuizApp();
   });
 }
 
@@ -247,11 +249,13 @@ function handleQuestionFormSubmission() {
      * Example: #option-container-0
      */
     let optionContainerId = `#option-container-${currentQuestionNum.answers.findIndex(i => i === selectedOption)}`;
-    if (selectedOption === currentQuestionNum.correctAnswer) {
+    if (selectedOption === currentQuestionNum.correctAnswer)
+    {
       STORE.score++;
       $(optionContainerId).append(generateFeedbackHTML('correct'));
     }
-    else {
+    else
+    {
       $(optionContainerId).append(generateFeedbackHTML('incorrect'));
     }
     STORE.currentQuestionNum++;
@@ -288,7 +292,6 @@ function handleRestartButtonClick() {
 }
 
 
-
 // callback function
 /***
  * FUNC:: handleQuizApp
@@ -300,8 +303,8 @@ function handleQuizApp() {
   handleStartClick();
   handleNextQuestionClick();
   handleRestartButtonClick();
-  handleKeyPress();
 }
 
 // when the page loads, call `handleQuizApp`
 $(handleQuizApp);
+
